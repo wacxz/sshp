@@ -38,7 +38,7 @@ SSHP 是一个简单而强大的 SSH 配置管理工具，它允许你通过 YAM
    git clone https://github.com/wacxz/sshp.git
    cd sshp
    chmod +x sshp.sh
-   ln -s sshp.sh /usr/local/bin/sshp
+   ln -s $(pwd)/sshp.sh /usr/local/bin/sshp
    sshp
    ```
 
