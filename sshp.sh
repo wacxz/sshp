@@ -2,6 +2,7 @@
 
 CONFIG_FILE=~/.sshp/sshp.yaml
 EDITOR=${EDITOR:-vi}
+CMD_NAME=$(basename "$0")
 
 create_config() {
   mkdir -p ~/.sshp
@@ -80,7 +81,7 @@ show_hosts() {
   done
   echo "connect to host command:"
   get_hosts "$group" | while read -r host; do
-    echo "$0 $host"
+    echo "$CMD_NAME $host"
   done
 }
 
@@ -167,11 +168,11 @@ main() {
     -h | --help)
       echo "SSH configuration management tool"
       echo "Usage:"
-      echo "  $0 group                - Show all groups"
-      echo "  $0 group <group name>   - Show hosts in a specific group"
-      echo "  $0 edit config          - Edit configuration file"
-      echo "  $0 -h | --help          - Show help information"
-      echo "  $0 <hostname>           - Connect to a specific host"
+      echo "  $CMD_NAME group                - Show all groups"
+      echo "  $CMD_NAME group <group name>   - Show hosts in a specific group"
+      echo "  $CMD_NAME edit config          - Edit configuration file"
+      echo "  $CMD_NAME -h | --help          - Show help information"
+      echo "  $CMD_NAME <hostname>           - Connect to a specific host"
       exit 1
       ;;
     *)
