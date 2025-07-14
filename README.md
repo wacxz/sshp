@@ -35,7 +35,11 @@ SSHP 是一个简单而强大的 SSH 配置管理工具，它允许你通过 YAM
 
 3. 下载 `sshp.sh` 脚本并添加执行权限：
    ```
+   git clone https://github.com/wacxz/sshp.git
+   cd sshp
    chmod +x sshp.sh
+   ln -s sshp.sh /usr/local/bin/sshp
+   sshp
    ```
 
 4. 可选：将脚本添加到你的 PATH 中，以便在任何位置使用它。
