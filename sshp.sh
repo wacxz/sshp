@@ -22,7 +22,7 @@ group1:
       password: 1qaz@WSX
     127.0.0.2:
     127.0.0.3:
-    
+
 EOF
     echo "Created configuration file: $CONFIG_FILE"
   fi
@@ -177,7 +177,7 @@ connect_host() {
   
   echo "Connecting to $user@$host_address:$port..."
   # echo "sshpass -p \"$password\" ssh -o StrictHostKeyChecking=no \"$user@$host_address\" -p \"$port\""
-  sshpass -p "$password" ssh -o StrictHostKeyChecking=no "$user@$host_address" -p "$port"
+  sshpass -p "$password" ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=30 "$user@$host_address" -p "$port"
 }
 edit_config() {
   create_config
