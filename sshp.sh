@@ -215,9 +215,9 @@ main() {
       echo "  $CMD_NAME -g | --group <group name>   - Show hosts in a specific group"
       echo "  $CMD_NAME -e | --edit config          - Edit configuration file"
       echo "  $CMD_NAME -h | --help                 - Show help information"
-      echo "  $CMD_NAME <hostname>                   - Connect to a specific host"
-      echo "  $CMD_NAME -a | --all                   - Show all hosts"
-      echo "  $CMD_NAME -v | --version        - Show version information"
+      echo "  $CMD_NAME -a | --all                  - Show all hosts"
+      echo "  $CMD_NAME -v | --version              - Show version information"
+      echo "  $CMD_NAME host                        - Connect to a specific host"
       exit 1
       ;;
     -a | --all)
