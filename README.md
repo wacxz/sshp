@@ -50,6 +50,7 @@ SSHP 使用 `~/.sshp/sshp.yaml` 作为配置文件。配置文件的结构如下
 
 ```yaml
 group:
+  name: "group name" # group name can be empty
   default:
     port: 22
     user: root
@@ -71,6 +72,7 @@ group:
 
 ```yaml
 production:
+  name: "生产环境"
   default:
     port: 22
     user: admin
