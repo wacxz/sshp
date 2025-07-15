@@ -24,7 +24,7 @@ SSHP 是一个简单而强大的 SSH 配置管理工具，它允许你通过 YAM
 2. 安装 `sshpass` 工具（用于自动输入密码）：
    ```
    # macOS
-   brew install hudochenkov/sshpass/sshpass
+   brew install sshpass
    
    # Debian/Ubuntu
    apt-get install sshpass
