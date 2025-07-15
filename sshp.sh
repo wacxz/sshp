@@ -17,10 +17,12 @@ group1:
     password: 1qaz@WSX
   list:
     127.0.0.1:
-      host: 127.0.0.1
       port: 22
       user: root
       password: 1qaz@WSX
+    127.0.0.2:
+    127.0.0.3:
+    
 EOF
     echo "Created configuration file: $CONFIG_FILE"
   fi
@@ -62,10 +64,7 @@ merge_config() {
   local host_password=$(get_config "$group.list.[\"$host\"].password")
   [ -z "$host_password" ] && host_password="$default_password"
   
-  local host_address=$(get_config "$group.list.[\"$host\"].host")
-  [ -z "$host_address" ] && host_address=$host
-
-  echo "$host_address $host_port $host_user $host_password"
+  echo "$host $host_port $host_user $host_password"
 }
 
 show_groups() {
@@ -207,12 +206,7 @@ main() {
       fi
       ;;
     -e | --edit)
-      if [ "$2" = "config" ]; then
-        edit_config
-      else
-        echo "Unknown command: $2"
-        exit 1
-      fi
+      edit_config
       ;;
     -h | --help)
       echo "SSH configuration management tool"

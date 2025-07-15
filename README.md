@@ -56,15 +56,12 @@ group:
     user: root
     password: your_password
   list:
-    主机名1:
-      host: 主机地址
+    ip1:
       port: 端口号
       user: 用户名
       password: 密码
-    主机名2:
-      host: 主机地址
-    主机名3:
-    主机名4:
+    ip2:
+    ip3:
       # 如果未指定，将使用默认配置
 ```
 
@@ -79,9 +76,7 @@ production:
     password: secure_password
   list:
     192.168.1.10:
-      host: 192.168.1.10
-    192.168.1.10:
-      host: 192.168.1.11
+    192.168.1.11:
       user: root  # 覆盖默认用户
 
 development:
@@ -91,8 +86,6 @@ development:
     password: dev_password
   list:
     127.0.0.1:
-      host: 127.0.0.1
-      port: 22
 ```
 
 ## 使用方法
@@ -100,31 +93,31 @@ development:
 ### 显示所有组
 
 ```
-./sshp.sh group
+sshp -g
 ```
 
 ### 显示组内的主机列表
 
 ```
-./sshp.sh group production
+sshp -g production
 ```
 
 ### 连接到主机
 
 ```
-./sshp.sh web1
+sshp 127.0.0.1
 ```
 
 ### 编辑配置文件
 
 ```
-./sshp.sh edit config
+sshp -e
 ```
 
 ### 显示帮助信息
 
 ```
-./sshp.sh -h
+sshp -h
 ```
 
 ## 注意事项
