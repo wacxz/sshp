@@ -116,9 +116,19 @@ show_all() {
     else
       echo "$group [$group_name]"
     fi
-    get_hosts "$group" | while read -r host; do
-      echo "  - $host"
-    done
+    
+    local host_list=()
+    while read -r host; do
+      host_list+=("$host")
+    done < <(get_hosts "$group")
+    
+    if [ ${#host_list[@]} -gt 0 ]; then
+      local output="  ${host_list[0]}"
+      for ((i=1; i<${#host_list[@]}; i++)); do
+        output="$output    ${host_list[$i]}"
+      done
+      echo "$output"
+    fi
   done
 }
 
