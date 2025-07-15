@@ -199,14 +199,14 @@ main() {
   create_config
   
   case "$1" in
-    group)
+    -g | --group)
       if [ -n "$2" ]; then
         show_hosts "$2"
       else
         show_groups
       fi
       ;;
-    edit)
+    -e | --edit)
       if [ "$2" = "config" ]; then
         edit_config
       else
@@ -217,19 +217,19 @@ main() {
     -h | --help)
       echo "SSH configuration management tool"
       echo "Usage:"
-      echo "  $CMD_NAME group                - Show all groups"
-      echo "  $CMD_NAME group <group name>   - Show hosts in a specific group"
-      echo "  $CMD_NAME edit config          - Edit configuration file"
-      echo "  $CMD_NAME -h | --help          - Show help information"
-      echo "  $CMD_NAME <hostname>           - Connect to a specific host"
-      echo "  $CMD_NAME all                  - Show all hosts"
-      echo "  $CMD_NAME version              - Show version information"
+      echo "  $CMD_NAME -g | --group                - Show all groups"
+      echo "  $CMD_NAME -g | --group <group name>   - Show hosts in a specific group"
+      echo "  $CMD_NAME -e | --edit config          - Edit configuration file"
+      echo "  $CMD_NAME -h | --help                 - Show help information"
+      echo "  $CMD_NAME <hostname>                   - Connect to a specific host"
+      echo "  $CMD_NAME -a | --all                   - Show all hosts"
+      echo "  $CMD_NAME -v | --version        - Show version information"
       exit 1
       ;;
-    all)
+    -a | --all)
       show_all
       ;;
-    version)
+    -v | --version)
       echo "$VERSION"
       exit 0
       ;;
