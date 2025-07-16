@@ -217,7 +217,7 @@ main() {
       echo "  $CMD_NAME -h | --help                 - Show help information"
       echo "  $CMD_NAME -a | --all                  - Show all hosts"
       echo "  $CMD_NAME -v | --version              - Show version information"
-      echo "  $CMD_NAME host                        - Connect to a specific host"
+      echo "  $CMD_NAME [host]                      - Connect to a specific host"
       exit 1
       ;;
     -a | --all)
